@@ -1,6 +1,6 @@
 import * as axios from 'axios';
 
-class SwapiService {
+export default class SwapiService {
 	constructor() {
 		this._initialAPI = axios.create({
 			baseURL: `https://swapi.co/api`
