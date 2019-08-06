@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Header from '../header/header';
-import RandomPlanets from '../random-planets/random-planets';
 import ItemList from '../item-list/item-list';
 import PersonDetails from '../person-details/person-details';
+import RandomPlanetsContainer from '../random-planets/random-planets-container';
 
 import './app.css';
 
@@ -11,7 +11,7 @@ const App = () => {
 	return (
 		<div className='star-wars-app'>
 			<Header/>
-			<RandomPlanets/>
+			<RandomPlanetsContainer/>
 
 			<div className='row mb2'>
 				<div className='col-md-6'>
