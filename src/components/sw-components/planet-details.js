@@ -2,6 +2,7 @@ import React from 'react';
 import ItemDetails from '../item-details/item-details';
 import Record from '../record/record';
 import withSwapiService from '../hoc-helper/with-swapi-service';
+import compose from '../hoc-helper/compose';
 
 const PlanetDetails = (props) => {
 	return (
@@ -21,4 +22,4 @@ const mapMethodsToProps = (swapiService) => {
 	}
 };
 
-export default withSwapiService(mapMethodsToProps)(PlanetDetails);
+export default compose(withSwapiService(mapMethodsToProps))(PlanetDetails);

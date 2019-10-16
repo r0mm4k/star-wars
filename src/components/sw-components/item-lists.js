@@ -3,6 +3,7 @@ import ItemList from '../item-list/item-list';
 import withData from '../hoc-helper/with-data';
 import withChildFunction from '../hoc-helper/with-child-function';
 import withSwapiService from '../hoc-helper/with-swapi-service';
+import compose from '../hoc-helper/compose';
 
 const renderName = ({name}) => <span>{name}</span>;
 const renderModelAndName = ({model, name}) => <span>{name} ({model})</span>;
@@ -23,8 +24,8 @@ const mapStarshipToProps = (swapiService) => {
 	};
 };
 
-const PersonList = withSwapiService(mapPersonToProps)(withData(withChildFunction(renderName)(ItemList)));
-const PlanetList = withSwapiService(mapPlanetToProps)(withData(withChildFunction(renderName)(ItemList)));
-const StarshipList = withSwapiService(mapStarshipToProps)(withData(withChildFunction(renderModelAndName)(ItemList)));
+const PersonList = compose(withSwapiService(mapPersonToProps), withData, withChildFunction(renderName))(ItemList);
+const PlanetList = compose(withSwapiService(mapPlanetToProps), withData, withChildFunction(renderName))(ItemList);
+const StarshipList = compose(withSwapiService(mapStarshipToProps), withData, withChildFunction(renderModelAndName))(ItemList);
 
 export { PersonList, PlanetList, StarshipList };
