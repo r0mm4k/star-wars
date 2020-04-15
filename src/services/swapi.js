@@ -3,7 +3,7 @@ import * as axios from 'axios';
 export default class SwapiService {
 	constructor() {
 		this._initialAPI = axios.create({
-			baseURL: `https://swapi.co/api`
+			baseURL: `https://swapi.dev/api`
 		});
 	}
 
